@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebJudge — платформа отзывов о веб-сайтах</title>
+    
+    <!-- Мета-теги для SEO -->
+    <meta name="description" content="WebJudge (ранее SiteReview) — платформа для публикации и просмотра отзывов на веб-сайты. 80+ отзывов, 8 пользователей, 34 сайта.">
+    <meta name="keywords" content="отзывы, оценка сайтов, рейтинг, веб-разработка, WebJudge, SiteReview">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical ссылка на новый сайт -->
+    <link rel="canonical" href="https://speedtelly1.github.io/WebJudge/">
+    
+    <!-- Редирект через JavaScript -->
+    <script>
+        // Сохраняем текущий путь и параметры
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+        const currentSearch = window.location.search;
+        
+        // Формируем новый URL
+        let newUrl = 'https://speedtelly1.github.io/WebJudge/';
+        
+        // Если это не корень сайта, пробуем найти соответствующий путь
+        if (currentPath !== '/' && currentPath !== '/index.html') {
+            // Убираем старый путь и добавляем новый
+            let newPath = currentPath.replace('/sitereview.github.io', '');
+            newUrl = 'https://speedtelly1.github.io/WebJudge' + newPath + currentSearch + currentHash;
+        } else {
+            newUrl += currentSearch + currentHash;
+        }
+        
+        // Выполняем редирект
+        window.location.href = newUrl;
+    </script>
+    
+    <!-- Мета-редирект (на случай, если JS отключён) -->
+    <meta http-equiv="refresh" content="0; url=https://speedtelly1.github.io/WebJudge/">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .redirect-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            max-width: 500px;
+            margin: 20px;
+        }
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: #3498db;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(52, 152, 219, 0.2);
+            border-radius: 50%;
+            border-top-color: #3498db;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .old-url {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">⚖️</div>
+        <h1>Web<span>Judge</span></h1>
+        <p>Платформа для публикации и просмотра отзывов на веб-сайты</p>
+        <div class="loader"></div>
+        <p>Перенаправление на новую версию сайта...</p>
+        <p style="font-size: 0.9rem;">
+            Если редирект не произошёл автоматически, 
+            <a href="https://speedtelly1.github.io/WebJudge/">нажмите здесь</a>
+        </p>
+        <div class="old-url">
+            ⚡ SiteReview → WebJudge
+        </div>
+    </div>
+</body>
+</html>
